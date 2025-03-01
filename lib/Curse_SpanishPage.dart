@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      builder: DevicePreview.appBuilder, 
-      home: CurvedScreen(), 
+      builder: DevicePreview.appBuilder,
+      home: CurvedScreen(),
     );
   }
 }
@@ -37,7 +37,7 @@ class CurvedBackground extends StatelessWidget {
           ClipPath(
           clipper: CurvedBackgroundClipper(),
           child: Container(
-            height: 900, 
+            height: 900,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.orangeAccent, Colors.orange],
@@ -58,8 +58,8 @@ class CurvedBackground extends StatelessWidget {
               left: 30,
               child: ElevatedButton(
             style:  ElevatedButton.styleFrom(
-              backgroundColor: Colors.white, 
-              foregroundColor: Color(0xFFFFAD2D), 
+              backgroundColor: Colors.white,
+              foregroundColor: Color(0xFFFFAD2D),
             ),
               onPressed: (){}, child: Row(
                 children: [
@@ -99,10 +99,10 @@ class CurvedBackground extends StatelessWidget {
                 ],
               )),
     Positioned(
-    top: MediaQuery.of(context).size.height * 0.35, 
+    top: MediaQuery.of(context).size.height * 0.35,
     left: 20,
     right: 20,
-    bottom: 0, 
+    bottom: 0, // Expands to the bottom
     child: SizedBox(
     height: MediaQuery.of(context).size.height * 0.6,
       child: GridView.builder(
@@ -128,7 +128,7 @@ class CurvedBackground extends StatelessWidget {
                     width: 60,
                     height: 55,
                     decoration: BoxDecoration(
-                      color:Colors.white, 
+                      color:Colors.white,
                       shape: BoxShape.circle,
                       boxShadow: [BoxShadow(blurRadius: 3 , spreadRadius: .2, offset: Offset(1,2),color: Colors.grey )]
                     ),
@@ -167,10 +167,10 @@ class CurvedBackgroundClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = Path();
-    path.lineTo(0,300);
+    path.lineTo(0,300); // Start from bottom left
     path.quadraticBezierTo(
-        size.width / 2, 500, size.width, 300);
-    path.lineTo(size.width, 0); 
+        size.width / 2, 500, size.width, 300); // Curve
+    path.lineTo(size.width, 0); // Top right corner
     path.close();
     return path;
   }
@@ -182,10 +182,10 @@ class CurvedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, 
+      extendBodyBehindAppBar: true, // Allows AppBar to overlay background
       appBar: AppBar(
-        backgroundColor: Colors.transparent, 
-        elevation: 0,
+        backgroundColor: Colors.transparent, // Transparent AppBar
+        elevation: 0, // Removes shadow
         title: Text("Curse",style: TextStyle(color: Colors.white),),
         leading: Icon(Icons.arrow_back_ios_new_outlined,color: Colors.white,),
         actions: [
@@ -195,7 +195,7 @@ class CurvedScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          CurvedBackground(), 
+          CurvedBackground(),
         ],
       ),
     );
