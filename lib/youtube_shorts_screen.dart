@@ -17,13 +17,13 @@ class YourScreen extends StatefulWidget {
 }
 
 class _YourScreenState extends State<YourScreen> {
-  int _selectedIndex = 1; // Default to Shorts page
+  int _selectedIndex = 1; 
   final List<Widget> _screens = [
-    home_screen(), // Home
+    home_screen(), 
     ShortsScreen(),
     Add_screen(),
-    subscription_screen(),// Shorts
-    library_screen(), // Add
+    subscription_screen(),
+    library_screen(),
   ];
   void _onItemTapped(int index) {
     // if (_selectedIndex != index) {
@@ -42,7 +42,7 @@ class _YourScreenState extends State<YourScreen> {
         ],
       ),
       body:  IndexedStack(
-        index: _selectedIndex, // Show the selected screen
+        index: _selectedIndex, 
         children: _screens,
       ),
       bottomNavigationBar: CustomBottomNavBar(
@@ -70,7 +70,7 @@ class CustomBottomNavBar extends StatelessWidget {
       currentIndex: selectedIndex,
       onTap: onTap,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.red, // Highlight color for selected tab
+      selectedItemColor: Colors.red, 
       unselectedItemColor: Colors.grey,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home_outlined,size: 33,), label: 'Home'),
