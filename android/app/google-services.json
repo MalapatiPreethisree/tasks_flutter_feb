@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "125896881539",
+    "project_id": "learn-firebase-da8d3",
+    "storage_bucket": "learn-firebase-da8d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125896881539:android:44418c39b4f715e5ecb2b6",
+        "android_client_info": {
+          "package_name": "com.example.tasks_flutter_feb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLrcKIAWfS9_aFuWdlYrRXcxyUDXJf-QI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
